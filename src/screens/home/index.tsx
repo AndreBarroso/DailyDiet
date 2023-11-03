@@ -3,6 +3,7 @@ import { Avatar, AvatarContainer, Container, Header, Logo  } from "./styles";
 import profilePicture from '@assets/avatar.jpeg'
 import logoPicutre from '@assets/logo.png'
 import { PercentagenDietConcluded } from "@components/PercentagenDietConcluded.tsx";
+import { ButtonActions } from "@components/ButtonActions";
 
 
 export default function Home() {
@@ -15,7 +16,8 @@ export default function Home() {
           </AvatarContainer>
         </Header>
         <PercentagenDietConcluded />
-        <Text>Refeições</Text>
+        <Text style={{marginBottom: 10}}>Refeições</Text>
+        <ButtonActions title="Nova refeição" type="plus"/>
       </Container>
     );
   }
