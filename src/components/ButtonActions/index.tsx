@@ -1,18 +1,29 @@
 import { TouchableOpacityProps, Text, View } from "react-native";
-import {Container, Icon, Title} from "./styles"
+import {CircleIcon, Container, Icon, Title} from "./styles"
 
 type ButtonActionsProp = TouchableOpacityProps & {
     title: string
+    width?: string
     type?: 'plus' 
+    margin?: string
+    height?: string
+    flexOne?: boolean
+    circleIconColor?: string
 }
 
-export const ButtonActions = ({title, type, ...rest}: ButtonActionsProp) => {
+export const ButtonActions = ({title, type, width, margin, height, circleIconColor='', flexOne = false, ...rest}: ButtonActionsProp) => {
     return (
         <Container 
+            flexOne={flexOne}
+            width={width}
+            margin={margin}
+            height={height}
             {...rest}
         >     
                  <Title>
-                    {type && <Icon name={type} size={25}/>}
+                    {type === 'plus' ? ( <Icon name={type} size={25}/> ) : (
+                        <CircleIcon circleIconColor={circleIconColor}/>
+                    )}
                     
                     <Text>
                         {title}
