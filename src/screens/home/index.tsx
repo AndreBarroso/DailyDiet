@@ -5,9 +5,16 @@ import logoPicutre from '@assets/logo.png'
 import { PercentagenDietConcluded } from "@components/PercentagenDietConcluded.tsx";
 import { ButtonActions } from "@components/ButtonActions";
 import { MealMadeCard } from "@components/MealMadeCard";
+// import {useNavigation} from '@react-navigation/native'
 
 
 export default function Home() {
+
+  // const navigation = useNavigation()
+
+  // const changePage = () => {
+  //   navigation.navigate('newMeal')
+  // }
 
   const DATA = [
     {
@@ -30,7 +37,7 @@ export default function Home() {
         </Header>
         <PercentagenDietConcluded />
         <Text style={{marginBottom: 10}}>Refeições</Text>
-        <ButtonActions title="Nova refeição" type="plus"/>
+        <ButtonActions title="Nova refeição" type="plus" />
         <SectionList
           sections={DATA}
           keyExtractor={(item, index) =>  `${item}${index}` }
