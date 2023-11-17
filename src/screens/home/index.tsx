@@ -35,7 +35,7 @@ export default function Home() {
             <Avatar source={profilePicture} borderRadius={20} />
           </AvatarContainer>
         </Header>
-        <PercentagenDietConcluded />
+        <PercentagenDietConcluded justifyContent="flex-end"/>
         <Text style={{marginBottom: 10}}>Refeições</Text>
         <ButtonActions title="Nova refeição" type="plus" onPress={onGoToNewMealPage}/>
         <SectionList

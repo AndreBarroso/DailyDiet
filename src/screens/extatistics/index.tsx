@@ -5,7 +5,7 @@ import { PercentagenDietConcluded } from '@components/PercentagenDietConcluded.t
 export const Extatistics = () => {
     return (
         <Container>
-            <PercentagenDietConcluded/>
+            <PercentagenDietConcluded borderWidth='0' justifyContent='flex-start'/>
             <GeneralExtatistics>
                 <Text>Estatísticas gerais</Text>
                 <BestFrequency>

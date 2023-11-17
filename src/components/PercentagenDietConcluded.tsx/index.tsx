@@ -1,13 +1,22 @@
+import { useNavigation } from "@react-navigation/native"
 import { Container, ExtatisticsContainerButton, Content } from "./styles"
-import {Text} from 'react-native'
+import {Text, TouchableOpacity} from 'react-native'
 
-export const PercentagenDietConcluded = () => {
+type PercentagenDietConcluded = {
+    borderWidth?: string
+    justifyContent?: 'flex-start' | 'flex-end'
+}
+
+export const PercentagenDietConcluded = ({borderWidth = '2px', justifyContent}: PercentagenDietConcluded) => {
+    const navigation = useNavigation()
     return (
-        <Container>
-            <ExtatisticsContainerButton>
+        <Container borderWidth={borderWidth}>
+            <ExtatisticsContainerButton justifyContent={justifyContent}>
+                <TouchableOpacity onPress={() => justifyContent === 'flex-end' ? navigation.navigate('extatistics') : navigation.goBack()}>
                 <Text >
-                    --{">>"}
+                    {justifyContent === "flex-end" ? '-->>' : '<<--'}
                 </Text>
+                </TouchableOpacity>
             </ExtatisticsContainerButton>
             <Content>
                 <Text style={{fontSize: 25, fontWeight: 'bold'}}>
