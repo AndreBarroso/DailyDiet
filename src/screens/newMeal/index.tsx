@@ -2,14 +2,16 @@ import { InputActions } from '@components/InputActions'
 import { Container, Header, NewMealForm, ReturnButton, FormWithColumns, Title} from './styles'
 import {Text, TouchableOpacity, View} from 'react-native'
 import { ButtonActions } from '@components/ButtonActions'
+import { useNavigation } from '@react-navigation/native'
 
 export const NewMeal = () => {
+    const navigation = useNavigation()
     return (
         <Container>
             <Header>
-                <ReturnButton>
+                <ReturnButton onPress={() => navigation.goBack()}>
                     <Text>
-                        Voltar
+                        {'<<--'}
                     </Text>
                 </ReturnButton>
                 <Title>Título</Title>

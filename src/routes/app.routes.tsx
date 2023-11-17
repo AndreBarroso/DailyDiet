@@ -9,7 +9,7 @@ export const AppRoutes = () => {
     const {Screen, Navigator} = createNativeStackNavigator()
     
     return (
-        <Navigator >
+        <Navigator screenOptions={{headerShown: false}}>
             <Screen
                 name ="home"
                 component={Home} 
