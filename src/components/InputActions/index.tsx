@@ -1,18 +1,18 @@
 import {Container, Input} from './styles'
-import { Text, TouchableOpacity } from 'react-native'
+import { Text, TextInputProps } from 'react-native'
 
-type InputActionsProps = {
+type InputActionsProps = TextInputProps & {
     title: string
     height: number
     flexOne?: boolean
 }
-export const InputActions = ({title, height, flexOne}: InputActionsProps) => {
+export const InputActions = ({title, height, flexOne, ...rest}: InputActionsProps) => {
     return (
         <Container style={{flex: flexOne ? 1 : undefined}}>
             <Text style={{marginBottom: 4}}>
                 {title}
             </Text>
-            <Input style={{height}}/>
+            <Input style={{height}} {...rest}/>
         </Container>
     )
 }
