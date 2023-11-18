@@ -5,9 +5,10 @@ import {Text, TouchableOpacity} from 'react-native'
 type PercentagenDietConcluded = {
     borderWidth?: string
     justifyContent?: 'flex-start' | 'flex-end'
+    percentage: number
 }
 
-export const PercentagenDietConcluded = ({borderWidth = '2px', justifyContent}: PercentagenDietConcluded) => {
+export const PercentagenDietConcluded = ({borderWidth = '2px', justifyContent, percentage}: PercentagenDietConcluded) => {
     const navigation = useNavigation()
     return (
         <Container borderWidth={borderWidth}>
@@ -20,7 +21,7 @@ export const PercentagenDietConcluded = ({borderWidth = '2px', justifyContent}: 
             </ExtatisticsContainerButton>
             <Content>
                 <Text style={{fontSize: 25, fontWeight: 'bold'}}>
-                    90,86%
+                    {`${percentage} `}%
                 </Text>
                 <Text >
                     das refeições da dieta

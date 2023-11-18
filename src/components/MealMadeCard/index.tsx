@@ -16,7 +16,7 @@ export const MealMadeCard  = ({time, meal, isHealthyMeal}: MealMadeCardProps) =>
                 <Divider>|</Divider>
                 <Meal>{meal}</Meal>
             </MealAndTime>
-            <Text>{meal}</Text>
+            <Text>Dentro da dieta: {isHealthyMeal === true ? ' Sim' : ' Não'}</Text>
         </Container>
     )
 } 

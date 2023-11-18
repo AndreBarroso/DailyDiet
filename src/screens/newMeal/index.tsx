@@ -14,7 +14,6 @@ export const NewMeal = () => {
     const [date, setDate] = useState('')
     const [hour, setHour] = useState('')
     const [onDiet, setOnDiet] = useState<boolean>()
-    const [test, setTest] = useState<MealType[]>([])
     const navigation = useNavigation()
 
     const reset = () => {
@@ -25,9 +24,6 @@ export const NewMeal = () => {
         setOnDiet(false)
     }
 
-    useEffect(() => {
-        console.log(test)
-    }, [test])
     return (
         <Container>
             <Header>
@@ -75,7 +71,7 @@ export const NewMeal = () => {
                         if(!name || !description || !date || !hour) {
                             return Alert.alert('Preencha todos os campos')
                         }
-                        if(!onDiet) {
+                        if(onDiet === undefined) {
                             return Alert.alert('Escolha se a refeição está dentro ou fora da dieta')
                         }
                         await mealCreate({name, description, date, hour, onDiet})
